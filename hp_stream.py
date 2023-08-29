@@ -20,7 +20,7 @@ def get_cropped_image_if_2_eyes(img):
             if len(eyes)>=2:
                 return roi_color
             
-model = joblib.load("hp_cast_model.pkl")
+model = joblib.load("hp_model.pkl")
 label = {'Alan Rickman': 0,
  'Alfred Enoch': 1,
  'Bonnie Wright': 2,

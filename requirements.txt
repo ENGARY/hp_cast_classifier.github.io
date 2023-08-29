@@ -138,7 +138,7 @@ widgetsnbextension==4.0.8
 word2number==1.1
 zipp==3.16.2
 Keras==2.13.1
-tensorboard==2.3.0
+tensorboard==2.13.0
 tensorboard-plugin-wit==1.7.0
 tensorflow==2.13.0
 tensorflow-estimator==2.13.0

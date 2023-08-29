@@ -138,9 +138,6 @@ Werkzeug==2.3.6
 widgetsnbextension==4.0.8
 word2number==1.1
 zipp==3.16.2
-matplotlib==3.3.2
-streamlit==0.70.0
-numpy==1.18.5
 Keras==2.4.3
 tensorboard==2.3.0
 tensorboard-plugin-wit==1.7.0

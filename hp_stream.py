@@ -7,8 +7,8 @@ st.write("### This model can predict only some main lead characters of the serie
 st.write("### Do not give image of any person other than the cast of HP series. ")
 inp_image = st.file_uploader("Drop your image here")
 
-face_cascade = cv2.CascadeClassifier("C:/Users/aryan/OneDrive/Desktop/hp face recognition/opencv/haarcascade_frontalface_default.xml")
-eye_cascade = cv2.CascadeClassifier("C:/Users/aryan/OneDrive/Desktop/hp face recognition/opencv/haarcascade_eye.xml")
+face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+eye_cascade = cv2.CascadeClassifier("haarcascade_eye.xml")
 def get_cropped_image_if_2_eyes(img):
     if (img is not None):
         gray= cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
@@ -20,7 +20,7 @@ def get_cropped_image_if_2_eyes(img):
             if len(eyes)>=2:
                 return roi_color
             
-model = joblib.load("C:/Users/aryan/OneDrive/Desktop/hp face recognition/code/hp_cast_model.pkl")
+model = joblib.load("hp_cast_model.pkl")
 label = {'Alan Rickman': 0,
  'Alfred Enoch': 1,
  'Bonnie Wright': 2,

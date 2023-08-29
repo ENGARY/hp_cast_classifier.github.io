@@ -142,5 +142,5 @@ tensorboard==2.13.0
 tensorboard-plugin-wit==1.7.0
 tensorflow==2.13.0
 tensorflow-estimator==2.13.0
-scipy==1.11.0
+scipy==1.10.0
 

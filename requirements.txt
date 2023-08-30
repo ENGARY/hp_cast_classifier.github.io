@@ -12,5 +12,5 @@ tensorboard-data-server
 tensorflow
 tensorflow-estimator
 tensorflow-hub
-tensorflow-io-gcs-filesystem==0.31.0
+tensorflow-io-gcs-filesystem
 

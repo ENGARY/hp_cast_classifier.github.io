@@ -7,6 +7,7 @@ from keras.models import load_model
 st.write("# Harry Potter Series Cast Face Recognition")
 st.write("### This model can predict only some main lead characters of the series. However, the model is not that much accurate, so it will make errors.")
 st.write("### Do not give image of any person other than the cast of HP series. ")
+st.write("### Avoid giving image containing more than 1 person for good results.")
 inp_image = st.file_uploader("Drop your image here")
 
 face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
@@ -22,25 +23,18 @@ def get_cropped_image_if_2_eyes(img):
             if len(eyes)>=2:
                 return roi_color
             
-model = load_model("hp_cast_model.h5")
+model = load_model("hp.h5")
 label = {'Alan Rickman': 0,
- 'Alfred Enoch': 1,
- 'Bonnie Wright': 2,
- 'Daniel Radcliffe': 3,
- 'Emma Watson': 4,
- 'Evanna Lynch': 5,
- 'Gary Oldman': 6,
- 'Helena Bonham Carter': 7,
- 'Julie Walters': 8,
- 'Maggie Smith': 9,
- 'Mark Williams': 10,
- 'Matthew Lewis': 11,
- 'Michael Gambon': 12,
- 'Ralph Fiennes': 13,
- 'Robbie Coltrane': 14,
- 'Rupert Grint': 15,
- 'Tom Felton': 16,
- }
+ 'Daniel Radcliffe': 1,
+ 'Emma Watson': 2,
+ 'Gary Oldman': 3,
+ 'Helena Bonham Carter': 4,
+ 'Maggie Smith': 5,
+ 'Michael Gambon': 6,
+ 'Ralph Fiennes': 7,
+ 'Robbie Coltrane': 8,
+ 'Rupert Grint': 9,
+ 'Tom Felton': 10}
 
 if inp_image is not None:
     read = Image.open(inp_image)
@@ -59,7 +53,7 @@ if inp_image is not None:
             if j==answer:
                 st.write("## ",i) 
     else:
-        st.write("## :pensive:Error! try other image")
+        st.write("## :pensive: Error! try other image")
 
 
 

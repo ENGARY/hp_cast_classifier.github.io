@@ -2,6 +2,8 @@ import streamlit as st
 from PIL import Image
 import numpy as np
 import cv2, joblib
+import keras
+from keras.models import load_model
 st.write("# Harry Potter Series Cast Face Recognition")
 st.write("### This model can predict only some main lead characters of the series. However, the model is not that much accurate, so it will make errors.")
 st.write("### Do not give image of any person other than the cast of HP series. ")
@@ -20,7 +22,7 @@ def get_cropped_image_if_2_eyes(img):
             if len(eyes)>=2:
                 return roi_color
             
-model = joblib.load("hp_model.pkl")
+model = load_model("hp_cast_model.h5")
 label = {'Alan Rickman': 0,
  'Alfred Enoch': 1,
  'Bonnie Wright': 2,

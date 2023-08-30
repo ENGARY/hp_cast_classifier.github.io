@@ -59,7 +59,7 @@ if inp_image is not None:
             if j==answer:
                 st.write("## ",i) 
     else:
-        st.write("## :pensive:Error! try other image")
+        st.write("## :pensive: Error! try other image")
 
 
 
